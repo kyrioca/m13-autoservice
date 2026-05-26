@@ -28,7 +28,7 @@ export default function InstagramFeed() {
   return (
     <section
       id="instagram"
-      className="py-20 md:py-28 bg-elevated"
+      className="py-32 md:py-44 bg-elevated"
       aria-labelledby="ig-heading"
     >
       <div className="max-w-7xl mx-auto px-5 lg:px-8">

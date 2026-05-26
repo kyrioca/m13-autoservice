@@ -95,7 +95,7 @@ export default function Gallery() {
   return (
     <section
       id="galerie"
-      className="py-20 md:py-28 bg-theme"
+      className="py-32 md:py-44 bg-theme"
       aria-labelledby="gallery-heading"
     >
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -105,9 +105,9 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-10"
+          className="text-center mb-12"
         >
-          <p className="section-label mb-4">Unsere Arbeit</p>
+          <p className="section-label mb-5">Unsere Arbeit</p>
           <h2
             id="gallery-heading"
             className="font-display text-primary leading-[0.9]"
@@ -115,11 +115,11 @@ export default function Gallery() {
           >
             PORTFOLIO
           </h2>
-          <div className="red-line mt-6" />
+          <div className="red-line mx-auto mt-7" />
         </motion.div>
 
         {/* Filter chips */}
-        <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Galerie filtern">
+        <div className="flex flex-wrap gap-2 mb-10 justify-center" role="group" aria-label="Galerie filtern">
           {filters.map((f) => (
             <button
               key={f.id}

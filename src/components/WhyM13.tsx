@@ -11,7 +11,7 @@ export default function WhyM13() {
   return (
     <section
       id="warum-m13"
-      className="py-16 md:py-20 border-y border-theme bg-elevated"
+      className="py-28 md:py-36 border-y border-theme bg-elevated"
       aria-labelledby="why-heading"
     >
       <div className="max-w-7xl mx-auto px-5 lg:px-8">

@@ -8,7 +8,7 @@ export default function Pricing() {
   return (
     <section
       id="preise"
-      className="py-20 md:py-28 bg-elevated relative overflow-hidden"
+      className="py-32 md:py-44 bg-elevated relative overflow-hidden"
       aria-labelledby="pricing-heading"
     >
       {/* Background texture */}

@@ -34,7 +34,7 @@ export default function About() {
   return (
     <section
       id="ueber-uns"
-      className="py-20 md:py-28 bg-theme"
+      className="py-32 md:py-44 bg-theme"
       aria-labelledby="about-heading"
     >
       <div className="max-w-7xl mx-auto px-5 lg:px-8">

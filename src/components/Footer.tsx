@@ -31,38 +31,36 @@ export default function Footer() {
       className="bg-elevated border-t border-theme"
       aria-label="Seitenfußbereich"
     >
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+      {/* Main Footer — 3 columns */}
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
 
           {/* Col 1: Brand + Address */}
           <div>
-            <a href="/" aria-label="M13 Autoservice — Startseite" className="inline-block mb-5">
+            <a href="/" aria-label="M13 Autoservice — Startseite" className="inline-block mb-6">
               <span
                 className="font-display text-primary leading-none"
-                style={{ fontSize: "2rem", letterSpacing: "-0.03em" }}
+                style={{ fontSize: "2.25rem", letterSpacing: "-0.03em" }}
               >
                 M<span style={{ color: "#e10600" }}>13</span>
               </span>
             </a>
-            <p className="text-secondary text-sm leading-relaxed mb-5">
-              Premium Fahrzeugpflege &amp; Detailing in Jülich. Seit{" "}
-              {siteConfig.founded}.
+            <p className="text-secondary text-sm leading-relaxed mb-6">
+              Premium Fahrzeugpflege &amp; Detailing in Jülich. Seit {siteConfig.founded}.
             </p>
             <address className="not-italic space-y-3">
-              <div className="flex items-start gap-2.5">
-                <MapPin size={14} className="text-[#e10600] mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-secondary text-xs leading-relaxed">
-                  {siteConfig.contact.address}
-                  <br />
+              <div className="flex items-start gap-3">
+                <MapPin size={13} className="text-[#e10600] mt-0.5 shrink-0" aria-hidden="true" />
+                <p className="text-secondary text-sm leading-relaxed">
+                  {siteConfig.contact.address}<br />
                   {siteConfig.contact.zip} {siteConfig.contact.city}
                 </p>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail size={14} className="text-[#e10600] shrink-0" aria-hidden="true" />
+              <div className="flex items-center gap-3">
+                <Mail size={13} className="text-[#e10600] shrink-0" aria-hidden="true" />
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="text-secondary text-xs hover:text-[#e10600] transition-colors"
+                  className="text-secondary text-sm hover:text-[#e10600] transition-colors"
                 >
                   {siteConfig.contact.email}
                 </a>
@@ -72,11 +70,11 @@ export default function Footer() {
 
           {/* Col 2: Navigation */}
           <div>
-            <h3 className="text-primary font-semibold text-sm mb-5 tracking-wide uppercase text-xs">
+            <h3 className="text-tertiary text-xs font-semibold tracking-[0.15em] uppercase mb-6">
               Navigation
             </h3>
             <nav aria-label="Footer-Navigation">
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <a
@@ -91,16 +89,16 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Col 3: Social / Instagram */}
+          {/* Col 3: Instagram + Legal */}
           <div>
-            <h3 className="text-primary font-semibold text-sm mb-5 tracking-wide uppercase text-xs">
-              Soziale Medien
+            <h3 className="text-tertiary text-xs font-semibold tracking-[0.15em] uppercase mb-6">
+              Instagram
             </h3>
             <a
               href={siteConfig.contact.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 rounded-xl group transition-all duration-200"
+              className="flex items-center gap-3 p-4 rounded-xl group transition-all duration-200 mb-4"
               style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
               aria-label="M13 Autoservice auf Instagram folgen"
             >
@@ -109,42 +107,15 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-primary font-semibold text-sm group-hover:text-[#e10600] transition-colors">
-                  Instagram
+                  {siteConfig.contact.instagramHandle}
                 </p>
-                <p className="text-secondary text-xs">{siteConfig.contact.instagramHandle}</p>
+                <p className="text-tertiary text-xs">Termin anfragen</p>
               </div>
             </a>
-            <p className="text-tertiary text-xs mt-4 leading-relaxed">
-              Folg uns für aktuelle Arbeiten &amp; Angebote — direkter Kanal für
-              Terminanfragen.
-            </p>
-          </div>
 
-          {/* Col 4: Legal + Hours */}
-          <div>
-            <h3 className="text-primary font-semibold text-sm mb-5 tracking-wide uppercase text-xs">
-              Öffnungszeiten
-            </h3>
-            <dl className="space-y-2.5 mb-6">
-              {siteConfig.hours.map((h) => (
-                <div key={h.days} className="flex justify-between gap-4">
-                  <dt className="text-secondary text-sm">{h.days}</dt>
-                  <dd
-                    className={`text-sm font-medium shrink-0 ${
-                      h.open ? "text-primary" : "text-tertiary"
-                    }`}
-                  >
-                    {h.time}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <div className="border-t border-theme pt-5">
-              <h4 className="text-tertiary text-xs font-semibold uppercase tracking-wide mb-3">
-                Rechtliches
-              </h4>
+            <div className="pt-5 border-t border-theme">
               <nav aria-label="Rechtliche Links">
-                <ul className="space-y-2">
+                <ul className="flex gap-5">
                   {legalLinks.map((l) => (
                     <li key={l.href}>
                       <a
@@ -164,7 +135,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-theme">
-        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-4 flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex items-center justify-center">
           <p className="text-tertiary text-xs">
             © {year} {siteConfig.name}. Alle Rechte vorbehalten.
           </p>

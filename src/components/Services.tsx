@@ -32,34 +32,31 @@ export default function Services() {
       aria-labelledby="services-heading"
     >
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 pt-20 md:pt-28 pb-12">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 pt-32 md:pt-44 pb-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+          className="text-center"
         >
-          <div>
-            <p className="section-label mb-4">Was wir anbieten</p>
-            <h2
-              id="services-heading"
-              className="font-display text-primary leading-[0.9]"
-              style={{
-                fontSize: "clamp(2.5rem, 7vw, 6rem)",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              UNSERE<br />
-              <span className="text-gradient-red">LEISTUNGEN</span>
-            </h2>
-          </div>
-          <p className="text-secondary max-w-sm text-sm leading-relaxed">
-            Jede Leistung wird mit professionellen Mitteln und echtem Handwerk ausgeführt.
-            Keine Kompromisse — nur Ergebnisse, die beeindrucken.
+          <p className="section-label mb-5">Was wir anbieten</p>
+          <h2
+            id="services-heading"
+            className="font-display text-primary leading-[0.9]"
+            style={{
+              fontSize: "clamp(2.5rem, 7vw, 6rem)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            UNSERE<br />
+            <span className="text-gradient-red">LEISTUNGEN</span>
+          </h2>
+          <div className="red-line mx-auto mt-7" />
+          <p className="text-secondary max-w-sm text-sm leading-relaxed mx-auto mt-6">
+            Professionelle Mittel, echtes Handwerk — keine Kompromisse.
           </p>
         </motion.div>
-        <div className="red-line mt-8" />
       </div>
 
       {/* 2×2 Grid */}
