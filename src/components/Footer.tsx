@@ -164,13 +164,9 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-theme">
-        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-4 flex items-center justify-center">
           <p className="text-tertiary text-xs">
             © {year} {siteConfig.name}. Alle Rechte vorbehalten.
-          </p>
-          <p className="text-tertiary text-xs">
-            Made with ❤️ by{" "}
-            <span className="text-secondary font-medium">EuregioByte</span>
           </p>
         </div>
       </div>

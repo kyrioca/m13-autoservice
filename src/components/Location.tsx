@@ -61,15 +61,15 @@ export default function Location() {
           >
             {mounted && (
               <iframe
-                src={siteConfig.contact.mapsEmbed}
+                src="https://maps.google.com/maps?q=Margaretenstra%C3%9Fe+11%2C+52428+J%C3%BClich%2C+Deutschland&hl=de&z=16&output=embed"
                 width="100%"
                 height="420"
                 title="M13 Autoservice auf der Karte — Margaretenstraße 11, 52428 Jülich"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="block w-full"
-                style={{ filter: "invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85)" }}
                 aria-label="Karte: M13 Autoservice in Jülich"
+                style={{ border: 0 }}
               />
             )}
             {!mounted && (

@@ -25,9 +25,6 @@ export default function Hero() {
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-  const whatsappUrl = siteConfig.contact.whatsapp
-    ? `https://wa.me/${siteConfig.contact.whatsapp}`
-    : siteConfig.contact.instagram;
 
   return (
     <section
@@ -165,12 +162,8 @@ export default function Hero() {
               Termin per Instagram
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href={whatsappUrl} target={siteConfig.contact.whatsapp ? "_blank" : undefined} rel="noopener noreferrer" className="btn-outline">
-              {siteConfig.contact.phone ? (
-                <span>Anrufen / WhatsApp</span>
-              ) : (
-                <span>Per E-Mail anfragen</span>
-              )}
+            <a href="#leistungen" className="btn-outline">
+              Leistungen ansehen
             </a>
           </motion.div>
         </div>

@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import LoadingScreen from "@/components/LoadingScreen";
-import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -21,7 +20,6 @@ export default function Home() {
   return (
     <>
       <LoadingScreen />
-      <CustomCursor />
       <ScrollProgress />
       <Navigation />
 

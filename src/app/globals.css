@@ -7,7 +7,7 @@
   --color-red-dim: rgba(225, 6, 0, 0.12);
 
   --font-display: var(--font-anton), "Anton", "Impact", sans-serif;
-  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
 }
 
 /* ─── Light Mode Variables ─── */
@@ -48,22 +48,19 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
 }
 
 body {
   background-color: var(--bg);
   color: var(--text-1);
   font-family: var(--font-sans);
-  overflow-x: hidden;
-  cursor: none;
+  overflow-x: clip;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  body {
-    cursor: auto;
-  }
+/* Sections should never clip their headings horizontally */
+section {
+  overflow-x: clip;
 }
 
 /* ─── Scrollbar ─── */

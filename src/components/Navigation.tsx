@@ -174,14 +174,6 @@ export default function Navigation() {
                 <IconInstagram size={16} />
                 Termin via Instagram
               </a>
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                onClick={() => setMenuOpen(false)}
-                className="btn-outline w-full justify-center py-4 text-sm"
-                style={{ color: "#ffffff", borderColor: "#2a2a2a" }}
-              >
-                Per E-Mail anfragen
-              </a>
             </div>
           </motion.div>
         )}
