@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens (Static) ─── */
+@theme {
+  --color-red: #e10600;
+  --color-red-hover: #ff1f1f;
+  --color-red-dim: rgba(225, 6, 0, 0.12);
+
+  --font-display: var(--font-anton), "Anton", "Impact", sans-serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+}
+
+/* ─── Light Mode Variables ─── */
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-elevated: #f5f5f5;
+  --border: #e5e5e5;
+  --border-strong: #d0d0d0;
+  --text-1: #0a0a0a;
+  --text-2: #525252;
+  --text-3: #8a8a8a;
+}
+
+/* ─── Dark Mode Variables ─── */
+.dark {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface-elevated: #1c1c1c;
+  --border: #2a2a2a;
+  --border-strong: #3a3a3a;
+  --text-1: #ffffff;
+  --text-2: #a0a0a0;
+  --text-3: #6b6b6b;
+}
+
+/* ─── Base Reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #e10600;
+  border-radius: 2px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(225, 6, 0, 0.25);
+  color: var(--text-1);
+}
+
+/* ─── Focus Visible ─── */
+:focus-visible {
+  outline: 2px solid #e10600;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ─── Theme-adaptive utility classes ─── */
+.bg-theme { background-color: var(--bg); }
+.bg-surface { background-color: var(--surface); }
+.bg-elevated { background-color: var(--surface-elevated); }
+.text-primary { color: var(--text-1); }
+.text-secondary { color: var(--text-2); }
+.text-tertiary { color: var(--text-3); }
+.border-theme { border-color: var(--border); }
+.border-strong { border-color: var(--border-strong); }
+.divide-theme > * + * { border-color: var(--border); }
+
+/* ─── Typography ─── */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #e10600 0%, #ff4033 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Buttons ─── */
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #e10600;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+.btn-red:hover {
+  background: #ff1f1f;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(225, 6, 0, 0.4);
+}
+.btn-red:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--text-1);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  border-color: var(--text-1);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-1px);
+}
+
+/* ─── Cards ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.card:hover {
+  background: var(--surface-elevated);
+  border-color: var(--border-strong);
+}
+
+/* ─── Section Label ─── */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e10600;
+}
+
+/* ─── Red Divider ─── */
+.red-line {
+  width: 2.5rem;
+  height: 2px;
+  background: #e10600;
+  border-radius: 1px;
+}
+
+/* ─── Noise Overlay ─── */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Marquee ─── */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-left 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Scroll Progress ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e10600;
+  transform-origin: left;
+  z-index: 9999;
+}
+
+/* ─── Pulsing ─── */
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 6, 0, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(225, 6, 0, 0); }
+}
+.pulse-red {
+  animation: pulse-red 2s ease-in-out infinite;
+}
+
+/* ─── Map Dark Filter ─── */
+.map-dark {
+  filter: invert(100%) hue-rotate(180deg) saturate(0.6) brightness(0.85);
+}
+.light .map-dark {
+  filter: none;
+}
+
+/* ─── Lightbox Backdrop ─── */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+/* ─── Instagram Gradient Border ─── */
+.instagram-gradient {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}

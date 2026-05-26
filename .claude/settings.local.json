@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"C:\\\\Users\\\\kaisc\\\\Downloads\\\\m13\"; Start-Process powershell -ArgumentList \"-NoExit -Command `\"cd 'C:\\\\Users\\\\kaisc\\\\Downloads\\\\m13'; npm run dev`\"\"; Start-Sleep -Seconds 4; Write-Host \"Dev server started in separate window\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
+    ]
+  }
+}
